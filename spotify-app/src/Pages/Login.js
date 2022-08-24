@@ -1,4 +1,5 @@
 import React from "react";
+import { loginEndpoint } from "../spotify";
 
 export default function Login() {
   return (
@@ -7,7 +8,7 @@ export default function Login() {
         src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" 
         alt="logo-spotify"
       />
-      <a href="http://localhost:3001/spotify/v1/login">
+      <a href={loginEndpoint}>
         <div style={styles.loginBtn}>Login With Spotify</div>
       </a>
     </div>
