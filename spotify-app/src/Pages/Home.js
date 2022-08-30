@@ -4,7 +4,7 @@ import SideNav from "../Components/SideNav/SideNav";
 import Favorites from "./Favorites" ;
 import Feed from "./Feed";
 import Library from "./Library/Library";
-import Player from "./player";
+import Player from "../Pages/Player/player";
 import Trending from "./trending";
 import Login from "./Login";
 //import apiClient from "../spotify";

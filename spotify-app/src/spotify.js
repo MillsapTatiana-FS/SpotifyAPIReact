@@ -2,7 +2,7 @@ import axios from "axios";
 
 const AUTHENDPOINT = "https://accounts.spotify.com/authorize?";
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-const REDIRECT_URI ="http://localhost:2222/callback/";
+const REDIRECT_URI ="http://localhost:3000";
 const SCOPE=["user-read-private", "user-read-email", "user-library-read", "playlist-read-private"];
 
 export const loginEndpoint = `${AUTHENDPOINT}client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE.join(
@@ -15,7 +15,7 @@ const apiClient = axios.create({
 
 export const setClientToken = (token) => {
   apiClient.interceptors.request.use(async function (config) {
-    config.headers.Authorization = "Bearer " + token;
+    config.headers.Authorization = "Bearer "+ token;
     return config;
   });
 };

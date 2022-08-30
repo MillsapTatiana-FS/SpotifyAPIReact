@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import "./AudioPlayer.css";
-import Controls from "./controls";
-import ProgressCircle from "./progressCircle";
-import WaveAnimation from "./waveAnimation";
+import React, { useState, useEffect, useRef } from 'react';
+import "./audioPlayer.css";
+import Controls from "./Control";
+import ProgressCircle from "./ProgressCircle";
+import WaveAnimation from "./WaveAnimation";
 
 export default function AudioPlayer({
     currentTrack,
@@ -96,7 +96,7 @@ export default function AudioPlayer({
             <ProgressCircle
                 percentage={currentPercentage}
                 isPlaying={true}
-                image={currentTrack.album.images[0].url}
+                image={currentTrack?.album.images[0]?.url}
                 size={300}
                 color="#C96850" 
                 />
@@ -123,61 +123,3 @@ export default function AudioPlayer({
   );
 }
 
-const styles = {
-    .player-body {
-        width: 100%;
-        height: 40%;
-        margin: 3% 0%;
-      }
-      
-      .player-left-body {
-        width: 37%;
-      }
-      
-      .player-right-body {
-        width: 63%;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      .song-title {
-        text-align: center;
-        font-size: 58px;
-        font-weight: bold;
-        margin: 0px;
-        color: #c4d0e3;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-      }
-      
-      .song-artist {
-        color: #9aa9c2;
-        font-size: 14px;
-        font-weight: 500;
-      }
-      
-      .player-right-bottom {
-        align-items: center;
-        width: 100%;
-        flex-direction: column;
-      }
-      
-      .song-duration {
-        width: 50%;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        align-items: center;
-      }
-      
-      .duration {
-        font-size: 20px;
-        font-weight: 700;
-        margin: 0;
-        color: #c4d0e3;
-      }
-}
