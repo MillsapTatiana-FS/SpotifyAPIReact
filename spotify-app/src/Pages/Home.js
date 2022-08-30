@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SideNav from "../Components/SideNav/SideNav";
 import Favorites from "./Favorites" ;
@@ -8,10 +7,12 @@ import Library from "./Library/Library";
 import Player from "./player";
 import Trending from "./trending";
 import Login from "./Login";
+//import apiClient from "../spotify";
 import { setClientToken } from "../spotify";
 
+
 function Home() {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState("");
 
   useEffect(() => {
     const token = window.localStorage.getItem("token");
@@ -27,7 +28,7 @@ function Home() {
       setClientToken(token);
     }
   }, []);
-  
+
   return !token ? (
     <Login />
   ) : (
