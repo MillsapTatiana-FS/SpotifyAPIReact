@@ -1,11 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SideNav from "../Components/SideNav/SideNav";
-import Favorites from "./Favorites" ;
-import Feed from "./Feed";
 import Library from "./Library/Library";
 import Player from "../Pages/Player/player";
-import Trending from "./trending";
 import Login from "./Login";
 //import apiClient from "../spotify";
 import { setClientToken } from "../spotify";
@@ -37,10 +34,7 @@ function Home() {
           <SideNav />
             <Routes>
               <Route path="/" element={<Library />} />
-              <Route path="/feed" element={<Feed />} />
-              <Route path="/trending" element={<Trending />} />
               <Route path="/player" element={<Player />} />
-              <Route path="/favorites" element={<Favorites />} />
             </Routes>
         </div>
     </Router>

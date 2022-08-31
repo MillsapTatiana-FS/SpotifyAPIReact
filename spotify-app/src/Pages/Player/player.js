@@ -4,6 +4,7 @@ import apiClient from '../../spotify';
 import SongCard from '../../Components/SongCard/SongCard';
 import Queue from '../../Components/Queue/Queue';
 import AudioPlayer from '../../Components/AudioPlayer/AudioPlayer';
+import Widgets from '../../Components/Widgets/Widgets';
 import './player.css';
 
 export default function Player() {
@@ -11,8 +12,6 @@ export default function Player() {
   const [tracks, setTracks] = useState([]);
   const [currentTrack, setCurrentTrack] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  
 
   useEffect(() => {
     if (location.state) {
@@ -32,10 +31,16 @@ export default function Player() {
   return (
     <div className="screen-container flex">
       <div className="left-player-body">
-        <AudioPlayer />
+        <AudioPlayer 
+          currentTrack={currentTrack}
+          total={tracks}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+          />
+          <Widgets artistID={currentTrack?.album?.artists[0]?.id} />
       </div>
       <div className="right-player-body">
-        <SongCard album={currentTrack.album} />
+        <SongCard album={currentTrack?.album} />
         <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} /> 
       </div>
     </div>

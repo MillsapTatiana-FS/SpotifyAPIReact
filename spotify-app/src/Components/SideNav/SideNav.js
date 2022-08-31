@@ -1,9 +1,9 @@
 import React, { useEffect, useState} from 'react';
 import { MdFavorite } from 'react-icons/md';
-import { FaGripfire, FaPlay } from 'react-icons/fa';
+import { FaPlay } from 'react-icons/fa';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { IoLibrary } from 'react-icons/io5';
-import { MdSpaceDashboard } from 'react-icons/md';
+//import { MdSpaceDashboard } from 'react-icons/md';
 import SideNavButton from './SideNavButton';
 import './SideNav.css';
 import apiClient from '../../spotify';
@@ -22,14 +22,7 @@ export default function SideNav() {
     <div className="sidebar-container">
       <img src={image} className="profile-img" alt="profile" />
       <div>
-        <SideNavButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} />
-        <SideNavButton title="Trending" to="/trending" icon={<FaGripfire />} />
         <SideNavButton title="Player" to="/player" icon={<FaPlay />} />
-        <SideNavButton
-          title="Favorites"
-          to="/favorites"
-          icon={<MdFavorite />}
-        />
         <SideNavButton title="Library" to="/" icon={<IoLibrary />} />
       </div>
       <SideNavButton title="Sign Out" to="" icon={<FaSignOutAlt />} />
