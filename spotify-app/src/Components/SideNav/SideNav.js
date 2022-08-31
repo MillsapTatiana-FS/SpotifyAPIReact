@@ -1,5 +1,4 @@
 import React, { useEffect, useState} from 'react';
-import { MdFavorite } from 'react-icons/md';
 import { FaPlay } from 'react-icons/fa';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { IoLibrary } from 'react-icons/io5';
