@@ -1,6 +1,6 @@
 import React from "react";
-import AlbumImage from "./albumImage";
-import AlbumInfo from "./albumInfo";
+import AlbumImage from "./AlbumImage";
+import AlbumInfo from "./AlbumInfo";
 
 export default function SongCard({ album }) {
   return (
